@@ -67,7 +67,7 @@ class ResNet(nn.Module):
         return nn.Sequential(*layers)
 
     def forward(self, x):
-        # x = x.reshape(1, 3, 448, 448)
+        x = x.reshape(1, 3, 448, 448)
         out1 = F.relu(self.bn1(self.conv1(x)), inplace=True)
         out1 = F.max_pool2d(out1, kernel_size=3, stride=2, padding=1)
         out2 = self.layer1(out1)
@@ -168,7 +168,7 @@ class F3Net(nn.Module):
         self.linearr5 = nn.Conv2d(64, 1, kernel_size=3, stride=1, padding=1)
 
     def forward(self, x, shape=None):
-        # x = x.reshape(1, 3, 448, 448)
+        x = x.reshape(1, 3, 448, 448)
         out2h, out3h, out4h, out5v = self.bkbone(x)
         out2h, out3h, out4h, out5v = self.squeeze2(out2h), self.squeeze3(
             out3h), self.squeeze4(out4h), self.squeeze5(out5v)
