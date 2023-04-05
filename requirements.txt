@@ -1,9 +1,10 @@
-numpy==1.15.2
-scikit-image==0.14.0
+onnx
+onnxruntime
+scikit-image
 torch
 torchvision
-pillow==8.1.1
+pillow
 opencv-python
-paddlepaddle
-paddlehub
-gradio
+# paddlepaddle
+# paddlehub
+# gradio
