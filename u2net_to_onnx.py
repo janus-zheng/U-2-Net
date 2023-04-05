@@ -3,7 +3,7 @@ import torch
 from model import U2NET  # full size version 173.6 MB
 from model import U2NETP  # small version u2net 4.7 MB
 
-model_name = "u2netp"
+model_name = "u2net"
 
 if model_name == "u2net":
     model = U2NET(3, 1)
@@ -18,13 +18,13 @@ model.eval()
 
 input_names = ["input"]
 output_names = ["output"]
-input_tensor = torch.zeros([1, 3, 320, 320])
+input_tensor = torch.zeros([1, 3, 256, 256])
 
 # I change the network to get 1 output: d1
 torch.onnx.export(model,
                   input_tensor,
                   f"{model_name}.onnx",
-                  opset_version=12,
+                  opset_version=13,
                   export_params=True,
                   verbose=True,
                   input_names=input_names,
