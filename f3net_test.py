@@ -33,8 +33,7 @@ model.load_state_dict(params)
 model.to(device)
 model.eval()
 
-mean, std = np.array([[[124.55, 118.90,
-                        102.94]]]), np.array([[[56.77, 55.97, 57.50]]])
+mean, std = np.array([[[124.55, 118.90, 102.94]]]), np.array([[[56.77, 55.97, 57.50]]])
 
 
 test_image = "./157234709924612_b59fa481-57c5-430c-9577-2d7e0183b8fc.png"
