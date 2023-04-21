@@ -23,6 +23,7 @@ def load_torch_model(model_path, device):
 
 # Change shapes and types to match model
 test_image = "./157234709924612_b59fa481-57c5-430c-9577-2d7e0183b8fc.png"
+test_image = "./test_segmentation.jpg"
 img = cv2.imread(test_image, cv2.IMREAD_COLOR)
 img_arr = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 print(img_arr.shape)
